@@ -1,0 +1,188 @@
+{
+  "categories": [
+    {
+      "key": "impression-numerique",
+      "titleFr": "Impression numérique",
+      "titleEn": "Digital printing",
+      "descriptionFr": "Des documents et supports imprimés avec soin pour vos besoins professionnels, commerciaux et personnels.",
+      "descriptionEn": "Carefully produced documents and print materials for your business, marketing and personal needs.",
+      "examplesFr": ["Documents administratifs prêts à présenter", "Cartes de visite et flyers pour une activité locale", "Brochure ou catalogue pour présenter une offre"],
+      "examplesEn": ["Administrative documents ready to present", "Business cards and flyers for a local business", "A brochure or catalogue to present an offer"]
+    },
+    {
+      "key": "signaletique-enseignes",
+      "titleFr": "Signalétique et enseignes",
+      "titleEn": "Signage and signs",
+      "descriptionFr": "Des repères visuels et enseignes pour identifier votre activité, orienter vos visiteurs et valoriser vos espaces.",
+      "descriptionEn": "Visual markers and signs to identify your business, guide visitors and enhance your spaces.",
+      "examplesFr": ["Enseigne de façade pour un commerce", "Panneaux directionnels pour un espace d’accueil", "Vitrine habillée aux couleurs d’une marque"],
+      "examplesEn": ["A storefront sign for a shop", "Directional signs for a reception area", "Window graphics using a brand’s colors"]
+    },
+    {
+      "key": "textile-personnalise",
+      "titleFr": "Impression textile et personnalisation",
+      "titleEn": "Textile printing and customization",
+      "descriptionFr": "Des vêtements et accessoires textiles personnalisés pour vos équipes, vos clients et vos événements.",
+      "descriptionEn": "Custom clothing and textile accessories for your team, customers and events.",
+      "examplesFr": ["T-shirts personnalisés pour une équipe", "Polos professionnels avec logo", "Sacs textiles personnalisés pour un événement"],
+      "examplesEn": ["Custom T-shirts for a team", "Professional polos with a logo", "Personalized tote bags for an event"]
+    },
+    {
+      "key": "objets-publicitaires",
+      "titleFr": "Objets publicitaires et cadeaux personnalisés",
+      "titleEn": "Promotional products and custom gifts",
+      "descriptionFr": "Des objets utiles personnalisés pour faire connaître votre marque et accompagner vos actions commerciales.",
+      "descriptionEn": "Useful customized products to raise brand awareness and support your marketing activities.",
+      "examplesFr": ["Stylos personnalisés pour un rendez-vous professionnel", "Mugs ou gourdes aux couleurs d’une entreprise", "Goodies distribués sur un salon"],
+      "examplesEn": ["Custom pens for a business meeting", "Mugs or bottles branded for a company", "Giveaways distributed at a trade show"]
+    },
+    {
+      "key": "design-graphique",
+      "titleFr": "Design graphique et communication visuelle",
+      "titleEn": "Graphic design and visual communication",
+      "descriptionFr": "Des créations graphiques cohérentes pour construire votre identité et communiquer sur vos supports imprimés ou numériques.",
+      "descriptionEn": "Consistent graphic design to build your identity and communicate across print and digital materials.",
+      "examplesFr": ["Identité visuelle pour une nouvelle activité", "Affiche promotionnelle pour une offre", "Visuels coordonnés pour les réseaux sociaux"],
+      "examplesEn": ["Visual identity for a new business", "A promotional poster for an offer", "Coordinated social media visuals"]
+    },
+    {
+      "key": "packaging-emballages",
+      "titleFr": "Packaging et emballages",
+      "titleEn": "Packaging and packaging materials",
+      "descriptionFr": "Des emballages, étiquettes et éléments de marque conçus pour présenter vos produits et prolonger leur univers.",
+      "descriptionEn": "Packaging, labels and branded materials designed to present your products and extend their identity.",
+      "examplesFr": ["Étiquettes pour une gamme de produits", "Sacs personnalisés pour une boutique", "Boîtes adaptées à un produit cosmétique"],
+      "examplesEn": ["Labels for a product range", "Custom bags for a shop", "Boxes designed for a cosmetics product"]
+    },
+    {
+      "key": "publicite-evenementiel",
+      "titleFr": "Publicité et événementiel",
+      "titleEn": "Advertising and events",
+      "descriptionFr": "Des supports visuels pour préparer votre événement, accueillir le public et rendre votre marque visible sur place.",
+      "descriptionEn": "Visual materials to prepare your event, welcome visitors and make your brand visible on site.",
+      "examplesFr": ["Kit de communication pour une conférence", "Décoration visuelle d’un stand", "Supports imprimés pour une cérémonie"],
+      "examplesEn": ["A communication kit for a conference", "Visual branding for a booth", "Printed materials for a ceremony"]
+    },
+    {
+      "key": "impression-grand-format",
+      "titleFr": "Impression grand format",
+      "titleEn": "Large-format printing",
+      "descriptionFr": "Des impressions de grand format pour vos vitrines, événements, espaces de travail et campagnes de visibilité.",
+      "descriptionEn": "Large-format prints for storefronts, events, workspaces and visibility campaigns.",
+      "examplesFr": ["Bâche promotionnelle pour une opération commerciale", "Impression sur vinyle pour une vitrine", "Décoration murale pour un espace d’accueil"],
+      "examplesEn": ["A promotional banner for a sales campaign", "Window graphics printed on vinyl", "Wall décor for a reception area"]
+    },
+    {
+      "key": "solutions-numeriques-web",
+      "titleFr": "Solutions numériques et web",
+      "titleEn": "Digital and web solutions",
+      "descriptionFr": "Des supports et services web pour présenter votre activité, développer votre présence en ligne et accompagner vos outils numériques.",
+      "descriptionEn": "Web services and materials to present your business, grow your online presence and support your digital tools.",
+      "examplesFr": ["Site vitrine pour présenter une entreprise", "Boutique en ligne pour vendre des produits", "Landing page dédiée à une campagne"],
+      "examplesEn": ["A business website to present a company", "An online shop for selling products", "A landing page for a campaign"]
+    },
+    {
+      "key": "services-entreprises",
+      "titleFr": "Services aux entreprises",
+      "titleEn": "Business services",
+      "descriptionFr": "Des prestations coordonnées pour les organisations qui souhaitent équiper leurs équipes et structurer leur communication.",
+      "descriptionEn": "Coordinated services for organizations looking to equip their teams and organize their communication.",
+      "examplesFr": ["Kit de communication pour une équipe commerciale", "Impression régulière de rapports professionnels", "Fourniture et installation de supports publicitaires"],
+      "examplesEn": ["A communication kit for a sales team", "Regular printing of business reports", "Supply and installation of advertising materials"]
+    }
+  ],
+  "services": [
+    ["impression-documents-administratifs", "Impression de documents administratifs et professionnels", "Administrative and business document printing", "impression-numerique"],
+    ["impression-cartes-visite", "Impression de cartes de visite", "Business card printing", "impression-numerique"],
+    ["impression-flyers-depliants", "Impression de flyers et dépliants", "Flyer and leaflet printing", "impression-numerique"],
+    ["impression-affiches-posters", "Impression d’affiches et de posters", "Poster printing", "impression-numerique"],
+    ["impression-brochures-magazines-catalogues", "Impression de brochures, magazines et catalogues", "Brochure, magazine and catalogue printing", "impression-numerique"],
+    ["impression-calendriers-agendas", "Impression de calendriers et agendas", "Calendar and planner printing", "impression-numerique"],
+    ["impression-livres-memoires", "Impression de livres et mémoires", "Book and thesis printing", "impression-numerique"],
+    ["impression-faire-part-invitations", "Impression de faire-part et invitations", "Announcement and invitation printing", "impression-numerique"],
+    ["impression-menus-cartes-restaurant", "Impression de menus et cartes de restaurant", "Restaurant menu printing", "impression-numerique"],
+    ["impression-stickers-autocollants", "Impression de stickers et autocollants", "Sticker and decal printing", "impression-numerique"],
+
+    ["conception-enseignes-lumineuses", "Conception et fabrication d’enseignes lumineuses", "Design and production of illuminated signs", "signaletique-enseignes"],
+    ["enseignes-publicitaires", "Enseignes publicitaires", "Advertising signs", "signaletique-enseignes"],
+    ["panneaux-publicitaires", "Panneaux publicitaires", "Advertising panels", "signaletique-enseignes"],
+    ["baches-publicitaires", "Bâches publicitaires", "Advertising banners", "signaletique-enseignes"],
+    ["banderoles-evenementielles", "Banderoles et banderoles événementielles", "Event banners", "signaletique-enseignes"],
+    ["roll-up-kakemonos", "Roll-up et kakémonos", "Roll-up banners and kakemonos", "signaletique-enseignes"],
+    ["panneaux-directionnels-signaletique", "Panneaux directionnels et signalétiques", "Directional and wayfinding signs", "signaletique-enseignes"],
+    ["plaques-professionnelles", "Plaques professionnelles", "Professional nameplates", "signaletique-enseignes"],
+    ["habillage-vitrines", "Habillage de vitrines", "Shop window graphics", "signaletique-enseignes"],
+    ["habillage-vehicules", "Habillage de véhicules", "Vehicle graphics and wraps", "signaletique-enseignes"],
+    ["signaletique-interieure-exterieure", "Signalétique intérieure et extérieure", "Indoor and outdoor signage", "signaletique-enseignes"],
+
+    ["impression-pagnes", "Impression sur pagnes", "Fabric printing for pagnes", "textile-personnalise"],
+    ["impression-t-shirts-polos", "Impression sur T-shirts et polos", "T-shirt and polo printing", "textile-personnalise"],
+    ["personnalisation-casquettes", "Personnalisation de casquettes", "Custom cap printing", "textile-personnalise"],
+    ["impression-tenues-professionnelles", "Impression sur tenues professionnelles", "Workwear printing", "textile-personnalise"],
+    ["personnalisation-sacs-tote-bags", "Personnalisation de sacs et tote bags", "Custom bags and tote bags", "textile-personnalise"],
+    ["impression-uniformes-vetements-promotionnels", "Impression sur uniformes et vêtements promotionnels", "Uniform and promotional clothing printing", "textile-personnalise"],
+    ["personnalisation-textiles-evenements", "Personnalisation de textiles pour événements", "Custom textiles for events", "textile-personnalise"],
+
+    ["stylos-personnalises", "Stylos personnalisés", "Custom pens", "objets-publicitaires"],
+    ["mugs-tasses-personnalises", "Mugs et tasses personnalisés", "Custom mugs and cups", "objets-publicitaires"],
+    ["gourdes-bouteilles-personnalisees", "Gourdes et bouteilles personnalisées", "Custom bottles and flasks", "objets-publicitaires"],
+    ["porte-cles-publicitaires", "Porte-clés publicitaires", "Promotional keyrings", "objets-publicitaires"],
+    ["sacs-promotionnels", "Sacs promotionnels", "Promotional bags", "objets-publicitaires"],
+    ["badges-porte-badges", "Badges et porte-badges", "Badges and badge holders", "objets-publicitaires"],
+    ["cadeaux-entreprise-personnalises", "Cadeaux d’entreprise personnalisés", "Custom corporate gifts", "objets-publicitaires"],
+    ["goodies-salons-evenements", "Goodies pour salons et événements", "Giveaways for trade shows and events", "objets-publicitaires"],
+
+    ["creation-logos-identites-visuelles", "Création de logos et identités visuelles", "Logo and visual identity design", "design-graphique"],
+    ["conception-affiches-publicitaires", "Conception d’affiches publicitaires", "Advertising poster design", "design-graphique"],
+    ["creation-flyers-depliants", "Création de flyers et dépliants", "Flyer and leaflet design", "design-graphique"],
+    ["conception-catalogues-brochures", "Conception de catalogues et brochures", "Catalogue and brochure design", "design-graphique"],
+    ["creation-cartes-visite", "Création de cartes de visite", "Business card design", "design-graphique"],
+    ["design-packaging-etiquettes", "Design de packaging et d’étiquettes", "Packaging and label design", "design-graphique"],
+    ["visuels-reseaux-sociaux", "Création de visuels pour les réseaux sociaux", "Social media visual design", "design-graphique"],
+    ["supports-communication-evenementielle", "Conception de supports de communication événementielle", "Event communication material design", "design-graphique"],
+    ["mise-en-page-documents-professionnels", "Mise en page de documents professionnels", "Business document layout", "design-graphique"],
+    ["retouche-preparation-fichiers-impression", "Retouche et préparation des fichiers pour impression", "Artwork retouching and print preparation", "design-graphique"],
+
+    ["sacs-personnalises", "Sacs personnalisés", "Custom printed bags", "packaging-emballages"],
+    ["boites-emballages-personnalises", "Boîtes et emballages personnalisés", "Custom boxes and packaging", "packaging-emballages"],
+    ["etiquettes-produits", "Étiquettes de produits", "Product labels", "packaging-emballages"],
+    ["autocollants-marque", "Autocollants de marque", "Branded stickers", "packaging-emballages"],
+    ["emballages-boutiques-restaurants", "Emballages pour boutiques et restaurants", "Packaging for shops and restaurants", "packaging-emballages"],
+    ["packaging-cosmetiques-alimentaires", "Packaging pour produits cosmétiques et alimentaires", "Packaging for cosmetics and food products", "packaging-emballages"],
+
+    ["supports-publicitaires-evenements", "Supports publicitaires pour événements", "Advertising materials for events", "publicite-evenementiel"],
+    ["decoration-visuelle-stands", "Décoration visuelle de stands", "Visual booth decoration", "publicite-evenementiel"],
+    ["impression-salons-professionnels", "Impression pour salons professionnels", "Print materials for trade shows", "publicite-evenementiel"],
+    ["supports-conferences-seminaires", "Supports pour conférences et séminaires", "Materials for conferences and seminars", "publicite-evenementiel"],
+    ["decoration-anniversaires-ceremonies", "Décoration pour anniversaires et cérémonies", "Decoration for birthdays and ceremonies", "publicite-evenementiel"],
+    ["communication-mariages", "Supports de communication pour mariages", "Wedding communication materials", "publicite-evenementiel"],
+    ["signaletique-evenements-commerciaux", "Décoration et signalétique pour événements commerciaux", "Decoration and signage for commercial events", "publicite-evenementiel"],
+
+    ["impression-grand-format-bache", "Impression grand format sur bâche", "Large-format banner printing", "impression-grand-format"],
+    ["impression-vinyle-adhesif", "Impression sur vinyle adhésif", "Adhesive vinyl printing", "impression-grand-format"],
+    ["impression-sur-toile", "Impression sur toile", "Canvas printing", "impression-grand-format"],
+    ["impression-papier-photo", "Impression sur papier photo", "Photo paper printing", "impression-grand-format"],
+    ["impression-panneaux-rigides", "Impression sur panneaux rigides", "Rigid panel printing", "impression-grand-format"],
+    ["impression-plans-posters-grand-format", "Impression de plans et posters grand format", "Large-format plans and posters", "impression-grand-format"],
+    ["decoration-murale-personnalisee", "Décoration murale personnalisée", "Custom wall decoration", "impression-grand-format"],
+
+    ["creation-sites-vitrines", "Création de sites vitrines", "Business website design", "solutions-numeriques-web"],
+    ["developpement-sites-e-commerce", "Développement de sites e-commerce", "E-commerce website development", "solutions-numeriques-web"],
+    ["sites-web-institutionnels", "Création de sites web institutionnels", "Institutional website design", "solutions-numeriques-web"],
+    ["conception-landing-pages", "Conception de landing pages", "Landing page design", "solutions-numeriques-web"],
+    ["creation-boutiques-en-ligne", "Création de boutiques en ligne", "Online shop creation", "solutions-numeriques-web"],
+    ["developpement-applications-web", "Développement d’applications web", "Web application development", "solutions-numeriques-web"],
+    ["maintenance-mise-a-jour-sites-web", "Maintenance et mise à jour de sites web", "Website maintenance and updates", "solutions-numeriques-web"],
+    ["hebergement-accompagnement-technique", "Hébergement et accompagnement technique", "Hosting and technical support", "solutions-numeriques-web"],
+    ["creation-bannieres-visuels-web", "Création de bannières et visuels web", "Web banners and visual design", "solutions-numeriques-web"],
+
+    ["impression-documents-volume", "Impression de documents en volume", "Bulk document printing", "services-entreprises"],
+    ["supports-communication-reguliers", "Fourniture de supports de communication réguliers", "Regular communication materials supply", "services-entreprises"],
+    ["kits-communication-entreprise", "Création de kits de communication d’entreprise", "Corporate communication kits", "services-entreprises"],
+    ["impression-rapports-institutionnels", "Impression de rapports et documents institutionnels", "Institutional reports and document printing", "services-entreprises"],
+    ["supports-campagnes-commerciales", "Conception de supports pour campagnes commerciales", "Sales campaign material design", "services-entreprises"],
+    ["personnalisation-tenues-objets-entreprise", "Personnalisation de tenues et objets d’entreprise", "Custom company clothing and products", "services-entreprises"],
+    ["commandes-professionnelles-sur-devis", "Commandes professionnelles sur devis", "Custom business orders by quotation", "services-entreprises"],
+    ["livraison-installation-supports-publicitaires", "Livraison et installation de supports publicitaires", "Delivery and installation of advertising materials", "services-entreprises"]
+  ]
+}
