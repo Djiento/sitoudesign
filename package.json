@@ -31,7 +31,7 @@
     "jose": "^6.2.12",
     "lucide-react": "^1.57.0",
     "motion": "^14.2.0",
-    "next": "16.4.0",
+    "next": "^16.4.3",
     "next-intl": "^4.14.9",
     "pg": "^8.23.1",
     "react": "19.3.0",
@@ -39,6 +39,7 @@
     "react-hook-form": "^7.90.0",
     "react-pageflip": "^2.0.3",
     "recharts": "^3.10.1",
+    "resend": "^6.34.1",
     "sonner": "^2.0.8",
     "tailwind-merge": "^3.7.0",
     "zod": "^4.6.7"
@@ -50,7 +51,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.4.0",
+    "eslint-config-next": "^16.4.3",
     "prisma": "^6.19.3",
     "tailwindcss": "^4",
     "typescript": "^5"
