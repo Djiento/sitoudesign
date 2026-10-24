@@ -16,6 +16,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## E-mail notifications
+
+The contact and quote forms send notifications through Resend. Configure these
+server-side environment variables in `.env` locally and in your hosting
+provider:
+
+```env
+RESEND_API_KEY=re_...
+RESEND_FROM_EMAIL=Sitou Design <notifications@your-verified-domain.com>
+CONTACT_EMAIL_TO=secretariatsitousarl@gmail.com
+```
+
+Verify the sender domain in Resend before using its address. The recipient
+defaults to the Sitou Design secretariat address above if
+`CONTACT_EMAIL_TO` is not set. Keep the API key private and never use a
+`NEXT_PUBLIC_` prefix for it.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

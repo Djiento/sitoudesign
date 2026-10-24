@@ -16,6 +16,7 @@ export default function ContactForm({
   const en = locale === "en";
   const [state, setState] = useState<FormState>("idle");
   const [reference, setReference] = useState("");
+  const [notificationSent, setNotificationSent] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -23,6 +24,7 @@ export default function ContactForm({
     setState("sending");
     setErrorMessage("");
     setReference("");
+    setNotificationSent(true);
 
     const form = event.currentTarget;
     const values = new FormData(form);
@@ -47,33 +49,25 @@ export default function ContactForm({
     }
 
     try {
-      if (quote) {
-        const response = await fetch("/api/devis", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
+      const response = await fetch(quote ? "/api/devis" : "/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
 
-        const result = await response.json();
-
-        if (!response.ok) {
-          const details = result.details as Record<string, string[]> | undefined;
-          const firstError = details ? Object.values(details).flat()[0] : undefined;
-          throw new Error(firstError ?? (en ? "Unable to submit your request." : "Impossible d'envoyer la demande."));
-        }
-
-        setReference(result.reference);
-        setState("success");
-        form.reset();
-      } else {
-        // L'API de contact sera ajoutée dans le bloc notifications.
-        setState("error");
-        setErrorMessage(
-          en
-            ? "The contact endpoint is not connected yet. Please use the phone number below."
-            : "Le service de contact n'est pas encore raccordé. Utilise le numéro indiqué ci-dessous.",
-        );
+      if (!response.ok) {
+        const details = result.details as Record<string, string[]> | undefined;
+        const firstError = details ? Object.values(details).flat()[0] : undefined;
+        throw new Error(firstError ?? (en
+          ? "Unable to send your message. Please try again or contact us by phone."
+          : "Impossible d'envoyer votre message. Réessayez ou contactez-nous par téléphone."));
       }
+
+      setReference(result.reference ?? "");
+      setNotificationSent(result.notificationSent !== false);
+      setState("success");
+      form.reset();
     } catch (error) {
       setState("error");
       setErrorMessage(
@@ -87,13 +81,19 @@ export default function ContactForm({
   return (
     <form className="form-panel" onSubmit={handleSubmit}>
       {state === "success" && (
-        <div className="alert alert-success mb-5">
+        <div className={`alert ${notificationSent ? "alert-success" : "alert-warning"} mb-5`}>
           <div>
-            <strong>{en ? "Request received!" : "Demande enregistrée !"}</strong>
-            <p>
-              {en ? "Your reference is:" : "Ta référence est :"}{" "}
-              <strong>{reference}</strong>
-            </p>
+            <strong>{quote
+              ? en ? "Request received!" : "Demande enregistrée !"
+              : en ? "Message sent!" : "Message envoyé !"}</strong>
+            {quote && reference && (
+              <p>{en ? "Your reference is:" : "Votre référence :"} <strong>{reference}</strong></p>
+            )}
+            {!notificationSent && (
+              <p>{en
+                ? "Your request is saved, but the notification email could not be sent. Please contact us by phone."
+                : "Votre demande est enregistrée, mais l’e-mail de notification n’a pas pu être envoyé. Merci de nous contacter par téléphone."}</p>
+            )}
           </div>
         </div>
       )}

@@ -37,8 +37,18 @@ export async function getPublicProducts() {
     where: { status: "PUBLISHED" },
     orderBy: [{ featured: "desc" }, { sortOrder: "asc" }, { createdAt: "asc" }],
     include: {
-      category: { select: { nameFr: true, nameEn: true } },
-      media: { orderBy: { sortOrder: "asc" } },
+      category: {
+        select: {
+          nameFr: true,
+          nameEn: true,
+          slug: true,
+          coverImage: true,
+        },
+      },
+      media: {
+        where: { type: "IMAGE" },
+        orderBy: { sortOrder: "asc" },
+      },
     },
   });
 }
@@ -52,7 +62,10 @@ export async function getPublicProduct(slug: string) {
     where: { slug, status: "PUBLISHED" },
     include: {
       category: true,
-      media: { orderBy: { sortOrder: "asc" } },
+      media: {
+        where: { type: "IMAGE" },
+        orderBy: { sortOrder: "asc" },
+      },
     },
   });
 }
@@ -73,6 +86,7 @@ export async function getPublicPortfolioProjects(limit?: number) {
       category: true,
       coverImage: true,
       gallery: {
+        where: { type: "IMAGE" },
         select: { id: true, altFr: true, altEn: true, url: true },
         orderBy: { sortOrder: "asc" },
       },
@@ -93,6 +107,11 @@ export async function getPublicPortfolioProject(slug: string) {
 
   return prisma.portfolioProject.findFirst({
     where: { slug, isPublished: true },
-    include: { gallery: { orderBy: { sortOrder: "asc" } } },
+    include: {
+      gallery: {
+        where: { type: "IMAGE" },
+        orderBy: { sortOrder: "asc" },
+      },
+    },
   });
 }

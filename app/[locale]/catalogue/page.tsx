@@ -18,13 +18,20 @@ export default async function CataloguePage({ params }: { params: Promise<{ loca
         description: raw === "fr" ? product.shortDescFr ?? product.descriptionFr : product.shortDescEn ?? product.descriptionEn,
         href: `/${raw}/catalogue/${product.slug}`,
         category: raw === "fr" ? product.category.nameFr : product.category.nameEn,
-        image: product.media[0]?.url ?? null,
-        imageType: "product" as const,
-        imageSlug: product.slug,
-        images: product.media.map((media) => ({
-          src: media.url,
-          alt: (raw === "fr" ? media.altFr : media.altEn) || (raw === "fr" ? product.nameFr : product.nameEn),
-        })),
+        image: product.media[0]?.url ?? product.category.coverImage,
+        imageType: product.media.length ? "product" as const : "category" as const,
+        imageSlug: product.media.length ? product.slug : product.category.slug,
+        images: product.media.length
+          ? product.media.map((media) => ({
+              src: media.url,
+              alt: (raw === "fr" ? media.altFr : media.altEn) || (raw === "fr" ? product.nameFr : product.nameEn),
+            }))
+          : product.category.coverImage
+            ? [{
+                src: product.category.coverImage,
+                alt: raw === "fr" ? product.category.nameFr : product.category.nameEn,
+              }]
+            : [],
       }))
     : data.cards;
 

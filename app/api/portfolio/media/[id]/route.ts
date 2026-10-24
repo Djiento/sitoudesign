@@ -15,6 +15,7 @@ export async function GET(_request: Request, { params }: RouteContext) {
   const media = await prisma.media.findFirst({
     where: { id, projectId: { not: null } },
     select: {
+      type: true,
       url: true,
       project: {
         select: { id: true, isPublished: true },
@@ -22,7 +23,7 @@ export async function GET(_request: Request, { params }: RouteContext) {
     },
   });
 
-  if (!media?.project) {
+  if (!media?.project || media.type !== "IMAGE") {
     return NextResponse.json({ error: "Image introuvable." }, { status: 404 });
   }
 

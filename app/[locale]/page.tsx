@@ -69,8 +69,19 @@ async function HomePageContent({ params }: HomePageProps) {
       orderBy: [{ sortOrder: "asc" }, { createdAt: "asc" }],
       take: 4,
       include: {
-        category: { select: { nameFr: true, nameEn: true } },
-        media: { orderBy: { sortOrder: "asc" }, select: { url: true, altFr: true, altEn: true } },
+        category: {
+          select: {
+            nameFr: true,
+            nameEn: true,
+            slug: true,
+            coverImage: true,
+          },
+        },
+        media: {
+          where: { type: "IMAGE" },
+          orderBy: { sortOrder: "asc" },
+          select: { url: true, altFr: true, altEn: true },
+        },
       },
     }),
     prisma.businessSolution.findMany({
@@ -288,13 +299,20 @@ async function HomePageContent({ params }: HomePageProps) {
                     tabIndex={-1}
                   />
                   <div className="home-product-visual">
-                    {product.media[0]?.url && (
+                    {(product.media.length > 0 || product.category.coverImage) && (
                       <ImageGallery
                         locale={locale}
-                        images={product.media.map((media) => ({
-                          src: managedImageUrl(media.url, "product", product.slug) ?? media.url,
-                          alt: (en ? media.altEn : media.altFr) || (en ? product.nameEn : product.nameFr),
-                        }))}
+                        images={product.media.length
+                          ? product.media.map((media) => ({
+                              src: managedImageUrl(media.url, "product", product.slug) ?? media.url,
+                              alt: (en ? media.altEn : media.altFr) || (en ? product.nameEn : product.nameFr),
+                            }))
+                          : product.category.coverImage
+                            ? [{
+                                src: managedImageUrl(product.category.coverImage, "category", product.category.slug) ?? product.category.coverImage,
+                                alt: en ? product.category.nameEn : product.category.nameFr,
+                              }]
+                            : []}
                         className="home-product-image-gallery"
                         imageClassName="home-product-image"
                         displayCount={1}
@@ -351,14 +369,35 @@ async function HomePageContent({ params }: HomePageProps) {
             </div>
             <div className="home-solution-list">
               {solutions.map((solution, index) => (
-                <Link href={`/${locale}/solutions-entreprises`} className="home-solution-item" key={solution.id}>
+                <article className="home-solution-item" key={solution.id}>
+                  <Link
+                    href={`/${locale}/solutions-entreprises`}
+                    className="home-solution-link-overlay"
+                    aria-label={en ? `Explore ${solution.titleEn}` : `Découvrir : ${solution.titleFr}`}
+                    tabIndex={-1}
+                  />
                   <span>{String(index + 1).padStart(2, "0")}</span>
+                  {solution.coverImage ? (
+                    <ImageGallery
+                      locale={locale}
+                      images={[{
+                        src: managedImageUrl(solution.coverImage, "business-solution", solution.slug) ?? solution.coverImage,
+                        alt: en ? solution.titleEn : solution.titleFr,
+                      }]}
+                      className="home-solution-image-gallery"
+                      imageClassName="home-solution-image"
+                    />
+                  ) : (
+                    <div className="home-solution-image-placeholder" aria-hidden="true">
+                      {String(index + 1).padStart(2, "0")}
+                    </div>
+                  )}
                   <div>
                     <h3>{en ? solution.titleEn : solution.titleFr}</h3>
                     <p>{en ? solution.descriptionEn : solution.descriptionFr}</p>
                   </div>
                   <ArrowUpRight aria-hidden="true" size={19} />
-                </Link>
+                </article>
               ))}
             </div>
           </div>

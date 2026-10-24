@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
+import { sendInquiryEmail } from "@/lib/inquiry-email";
 
 const quoteSchema = z.object({
   fullName: z.string().trim().min(2).max(120),
@@ -49,11 +50,20 @@ export async function POST(request: NextRequest) {
       select: { reference: true, createdAt: true },
     });
 
+    let notificationSent = true;
+    try {
+      await sendInquiryEmail({ ...data, kind: "quote" });
+    } catch (error) {
+      notificationSent = false;
+      console.error("Quote notification email failed:", error);
+    }
+
     return NextResponse.json(
       {
         success: true,
         reference: quote.reference,
         createdAt: quote.createdAt,
+        notificationSent,
       },
       { status: 201 },
     );

@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "seed:public": "node --env-file=.env prisma/seed-public-content.mjs",
     "seed:portfolio": "node --env-file=.env prisma/seed-portfolio.mjs",
     "seed:services": "node --env-file=.env prisma/seed-service-catalogue.mjs"

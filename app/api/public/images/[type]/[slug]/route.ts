@@ -33,7 +33,7 @@ async function imageIsPublic(type: string, slug: string, url: string) {
           isPublished: true,
           OR: [
             { coverImage: url },
-            { gallery: { some: { url } } },
+            { gallery: { some: { url, type: "IMAGE" } } },
           ],
         },
         select: { id: true },
@@ -43,7 +43,7 @@ async function imageIsPublic(type: string, slug: string, url: string) {
         where: {
           slug,
           status: "PUBLISHED",
-          media: { some: { url } },
+          media: { some: { url, type: "IMAGE" } },
         },
         select: { id: true },
       }));
