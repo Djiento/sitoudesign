@@ -15,5 +15,5 @@ export default async function AdminLoginPage({
     notFound();
   }
 
-  return <AdminLoginForm />;
+  return <AdminLoginForm locale={locale} />;
 }
