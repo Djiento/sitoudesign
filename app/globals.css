@@ -10079,3 +10079,90 @@ html[data-admin-theme="dark"] .admin-dialog-content.admin-order-dialog {
     height: 250px;
   }
 }
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  textarea,
+  select,
+  .input,
+  .textarea,
+  .select
+),
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  textarea,
+  select,
+  .input,
+  .textarea,
+  .select
+) {
+  border: 1px solid #425166 !important;
+  border-radius: 9px;
+  background-color: #202b38 !important;
+  color: #edf2f7 !important;
+  color-scheme: dark;
+  opacity: 1;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(input, textarea, select)::placeholder,
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(input, textarea)::placeholder {
+  color: #b0bdcc !important;
+  opacity: 1;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(input, textarea, select):focus,
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(input, textarea, select):focus {
+  border-color: #8bb2ff !important;
+  outline: 3px solid rgb(105 153 239 / 24%);
+  outline-offset: 1px;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(input, textarea, select):disabled,
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(input, textarea, select):disabled {
+  border-color: #354254 !important;
+  background-color: #1a232e !important;
+  color: #aab5c3 !important;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form input[type="file"],
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form input[type="file"] {
+  border: 1px solid #425166;
+  border-radius: 9px;
+  background-color: #202b38;
+  color: #edf2f7;
+  color-scheme: dark;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form input[type="checkbox"],
+html[data-admin-theme="dark"] .admin-layout .admin-main form input[type="radio"],
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form input[type="checkbox"],
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form input[type="radio"] {
+  accent-color: #8bb2ff;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(label, legend, .label-text),
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(label, legend, .label-text) {
+  color: #d9e2ee;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(label, legend, .label-text) small,
+html[data-admin-theme="dark"] .admin-layout .admin-main form .admin-form-helper,
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(label, legend, .label-text) small,
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form .admin-form-helper {
+  color: #aab7c7;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(.admin-form-section, .admin-portfolio-form-section, fieldset),
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(.admin-form-section, .admin-portfolio-form-section, fieldset) {
+  border-color: #354254;
+  background-color: #1b2430;
+  color: #e7edf4;
+}
+
+html[data-admin-theme="dark"] .admin-layout .admin-main form :is(.admin-form-actions, .admin-portfolio-dialog-actions),
+html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) form :is(.admin-form-actions, .admin-portfolio-dialog-actions) {
+  border-color: #354254;
+  background-color: #1b2430;
+}
