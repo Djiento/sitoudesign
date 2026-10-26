@@ -382,7 +382,7 @@ export default function OrderManager({ locale, role, staffId }: { locale: Locale
   return (
     <div className="admin-content">
       <header className="admin-page-heading">
-        <div><span className="admin-eyebrow">VENTES · FACTURATION</span><h1>Commandes & factures</h1><p>Crée une vente directe ou convertis un devis accepté. Chaque paiement alimente une session de caisse.</p></div>
+        <div><span className="admin-eyebrow">VENTES · FACTURATION</span><h1>Commandes</h1><p>Crée une vente directe ou convertis un devis accepté. Chaque paiement alimente une session de caisse.</p></div>
         <button type="button" className="admin-primary-button" onClick={() => void openNewOrder()}><Plus size={18} />Nouvelle commande</button>
       </header>
       {showForm && (

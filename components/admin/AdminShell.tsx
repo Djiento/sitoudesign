@@ -20,6 +20,7 @@ import {
   FolderOpen,
   FolderTree,
   Lightbulb,
+  Landmark,
   LayoutDashboard,
   LogOut,
   Menu,
@@ -42,6 +43,7 @@ const navItems = [
   { key: "cash", icon: CreditCard, path: "/caisse" },
   { key: "orders", icon: ReceiptText, path: "/commandes" },
   { key: "stock", icon: Boxes, path: "/stock" },
+  { key: "expenses", icon: Landmark, path: "/depenses" },
   { key: "reports", icon: BarChart3, path: "/rapports" },
   { key: "users", icon: Users, path: "/utilisateurs" },
   { key: "audit", icon: Activity, path: "/audit" },
@@ -126,15 +128,16 @@ export default function AdminShell({
     portfolio: en ? "Portfolio" : "Réalisations",
     quotes: en ? "Quote requests" : "Demandes de devis",
     cash: en ? "Cash register" : "Gestion de caisse",
-    orders: en ? "Orders & invoices" : "Commandes & factures",
+    orders: en ? "Orders & invoices" : "Commandes",
     stock: en ? "Inventory" : "Gestion de stock",
+    expenses: en ? "Bills & due dates" : "Factures & échéances",
     reports: en ? "Reports" : "Rapports",
     users: en ? "Team accounts" : "Comptes utilisateurs",
     audit: en ? "Audit log" : "Journal d’audit",
   };
   const canManageContent = role !== "CASHIER";
   const visibleNavItems = navItems.filter(({ key }) => key !== "dashboard" && (role === "ADMIN"
-    || key === "cash" || key === "orders" || key === "stock"
+    || key === "cash" || key === "orders" || key === "stock" || key === "expenses"
     || (key === "reports" && canExportReports)));
   const activeItem = navItems.find(({ path }) =>
     path === "" ? pathname === root || pathname === `${root}/` : pathname.startsWith(`${root}${path}`),

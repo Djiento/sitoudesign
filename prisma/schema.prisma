@@ -87,6 +87,37 @@ enum StockMovementType {
   ADJUSTMENT
 }
 
+enum ExpenseFrequency {
+  MONTHLY
+  QUARTERLY
+  SEMIANNUAL
+  ANNUAL
+  CUSTOM
+}
+
+enum ExpenseStatus {
+  UNPAID
+  PARTIALLY_PAID
+  PAID
+  CANCELLED
+}
+
+enum ExpenseCancellationStatus {
+  NONE
+  REQUESTED
+  APPROVED
+  REJECTED
+}
+
+enum ExpensePaymentMethod {
+  CASH
+  MOBILE_MONEY
+  BANK_TRANSFER
+  CARD
+  CHEQUE
+  OTHER
+}
+
 model Category {
   id            String    @id @default(cuid())
   slug          String    @unique
@@ -272,6 +303,11 @@ model StaffUser {
   orders             CustomerOrder[] @relation("OrderCreator")
   payments           OrderPayment[]  @relation("PaymentActor")
   stockMovements     StockMovement[]
+  createdExpenses   Expense[]         @relation("ExpenseCreator")
+  updatedExpenses   Expense[]         @relation("ExpenseUpdater")
+  expensePayments   ExpensePayment[]
+  expenseSchedules  ExpenseSchedule[]
+  expenseAttachments ExpenseAttachment[]
   createdAt          DateTime        @default(now())
   updatedAt          DateTime        @updatedAt
 
@@ -467,6 +503,139 @@ model AuditEvent {
 
   @@index([targetType, targetId, occurredAt])
   @@index([actorId, occurredAt])
+}
+
+model ExpenseCategory {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  nameFr    String
+  nameEn    String
+  isBuiltin Boolean   @default(false)
+  isActive  Boolean   @default(true)
+  sortOrder Int       @default(0)
+  expenses  Expense[]
+  schedules ExpenseSchedule[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@index([isActive, sortOrder])
+}
+
+model Expense {
+  id                    String                    @id @default(cuid())
+  reference             String                    @unique
+  categoryId            String
+  category              ExpenseCategory           @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  label                 String
+  description           String                    @db.Text
+  amount                Int
+  currency              String                    @default("XOF")
+  expenseDate           DateTime
+  dueDate               DateTime?
+  invoiceDate           DateTime?
+  invoiceNumber         String?
+  beneficiary           String
+  status                ExpenseStatus             @default(UNPAID)
+  periodStart           DateTime?
+  periodEnd             DateTime?
+  internalComment       String?                   @db.Text
+  details               Json?
+  isDeposit             Boolean                   @default(false)
+  cancellationStatus    ExpenseCancellationStatus @default(NONE)
+  cancellationReason    String?                   @db.Text
+  cancellationRequestedById String?
+  cancellationApprovedById String?
+  cancellationRequestedAt DateTime?
+  cancellationApprovedAt DateTime?
+  createdById           String
+  createdBy             StaffUser                 @relation("ExpenseCreator", fields: [createdById], references: [id], onDelete: Restrict)
+  updatedById           String?
+  updatedBy             StaffUser?                @relation("ExpenseUpdater", fields: [updatedById], references: [id], onDelete: SetNull)
+  payments              ExpensePayment[]
+  attachments           ExpenseAttachment[]
+  scheduledOccurrenceId String?                   @unique
+  scheduledOccurrence   ExpenseScheduleOccurrence? @relation(fields: [scheduledOccurrenceId], references: [id], onDelete: SetNull)
+  createdAt             DateTime                  @default(now())
+  updatedAt             DateTime                  @updatedAt
+
+  @@index([categoryId, expenseDate])
+  @@index([status, dueDate])
+  @@index([createdById, createdAt])
+  @@index([beneficiary])
+  @@index([periodStart, periodEnd])
+}
+
+model ExpensePayment {
+  id            String      @id @default(cuid())
+  expenseId     String
+  expense       Expense     @relation(fields: [expenseId], references: [id], onDelete: Restrict)
+  amount        Int
+  method        ExpensePaymentMethod
+  paidAt        DateTime
+  reference     String?
+  comment       String?     @db.Text
+  isVoided      Boolean     @default(false)
+  voidReason    String?     @db.Text
+  voidedAt      DateTime?
+  createdById   String
+  createdBy     StaffUser   @relation(fields: [createdById], references: [id], onDelete: Restrict)
+  voidedById    String?
+  createdAt     DateTime    @default(now())
+
+  @@index([expenseId, paidAt])
+  @@index([paidAt, method])
+  @@index([createdById, createdAt])
+}
+
+model ExpenseAttachment {
+  id           String         @id @default(cuid())
+  expenseId    String
+  expense      Expense        @relation(fields: [expenseId], references: [id], onDelete: Restrict)
+  storagePath  String         @unique
+  fileName     String
+  mimeType     String
+  sizeBytes    Int
+  uploadedById String
+  uploadedBy   StaffUser      @relation(fields: [uploadedById], references: [id], onDelete: Restrict)
+  createdAt    DateTime       @default(now())
+
+  @@index([expenseId, createdAt])
+}
+
+model ExpenseSchedule {
+  id                String                    @id @default(cuid())
+  categoryId        String
+  category          ExpenseCategory           @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  label             String
+  beneficiary       String
+  frequency         ExpenseFrequency
+  customFrequencyDays Int?
+  nextDueAt         DateTime
+  estimatedAmount  Int?
+  currency          String                    @default("XOF")
+  reminderDays      Int                       @default(7)
+  details           Json?
+  isActive          Boolean                   @default(true)
+  createdById       String
+  createdBy         StaffUser                 @relation(fields: [createdById], references: [id], onDelete: Restrict)
+  occurrences       ExpenseScheduleOccurrence[]
+  createdAt         DateTime                  @default(now())
+  updatedAt         DateTime                  @updatedAt
+
+  @@index([isActive, nextDueAt])
+  @@index([categoryId, isActive])
+}
+
+model ExpenseScheduleOccurrence {
+  id            String          @id @default(cuid())
+  scheduleId    String
+  schedule      ExpenseSchedule @relation(fields: [scheduleId], references: [id], onDelete: Restrict)
+  dueAt         DateTime
+  expense       Expense?
+  createdAt     DateTime        @default(now())
+
+  @@unique([scheduleId, dueAt])
+  @@index([scheduleId, createdAt])
 }
 
 model StockItem {

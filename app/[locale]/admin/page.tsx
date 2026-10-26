@@ -67,7 +67,7 @@ export default async function AdminDashboard({ params }: { params: Promise<{ loc
     { label: en ? "Services" : "Services", value: services, icon: BriefcaseBusiness, href: `/${locale}/admin/services`, tone: "violet" },
     { label: en ? "Business solutions" : "Solutions entreprises", value: solutions, icon: Lightbulb, href: `/${locale}/admin/solutions-entreprises`, tone: "orange" },
     { label: en ? "Advice articles" : "Conseils", value: articles, icon: BookOpenText, href: `/${locale}/admin/conseils`, tone: "blue" },
-    { label: en ? "Orders & invoices" : "Commandes & factures", value: orders, icon: ReceiptText, href: `/${locale}/admin/commandes`, tone: "green" },
+    { label: en ? "Orders & invoices" : "Commandes", value: orders, icon: ReceiptText, href: `/${locale}/admin/commandes`, tone: "green" },
     { label: en ? "Inventory items" : "Fiches matières", value: stockItems, icon: Boxes, href: `/${locale}/admin/stock`, tone: "violet" },
     { label: en ? "Cash registers" : "Caisses", value: registers, icon: Banknote, href: `/${locale}/admin/caisse`, tone: "orange" },
     { label: en ? "Requests to follow up" : "Devis à suivre", value: quotes, icon: ReceiptText, href: `/${locale}/admin/devis`, tone: "green" },

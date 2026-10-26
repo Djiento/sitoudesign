@@ -10166,3 +10166,824 @@ html[data-admin-theme="dark"] :is(.admin-dialog-content, .admin-confirm-dialog) 
   border-color: #354254;
   background-color: #1b2430;
 }
+
+.admin-expenses-page {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-expense-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 6px;
+  border: 1px solid var(--admin-border);
+  border-radius: 13px;
+  background: var(--admin-surface);
+}
+
+.admin-expense-tabs button {
+  display: inline-flex;
+  min-height: 39px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--admin-muted);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-expense-tabs button.is-active {
+  background: #eaf0ff;
+  color: #2859c6;
+}
+
+.admin-expense-period,
+.admin-expense-report-toolbar,
+.admin-expense-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-expense-period {
+  margin-bottom: 16px;
+}
+
+.admin-expense-period label,
+.admin-expense-report-filters > label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--admin-text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-expense-period input,
+.admin-expense-input {
+  min-height: 40px;
+  padding: 8px 11px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  outline: none;
+  background: var(--admin-surface);
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.admin-expense-period > span {
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-period-count {
+  margin: -7px 0 14px;
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-period-count strong {
+  color: var(--admin-text);
+}
+
+.admin-expense-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.admin-expense-chart {
+  width: 100%;
+  height: 250px;
+}
+
+.admin-expense-empty {
+  padding: 18px 4px;
+  color: var(--admin-muted) !important;
+  font-size: 12px !important;
+  text-align: center;
+}
+
+.admin-expense-category-total,
+.admin-expense-upcoming,
+.admin-expense-recent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--admin-border);
+  color: var(--admin-text);
+  font-size: 11px;
+}
+
+.admin-expense-category-total strong,
+.admin-expense-upcoming > strong,
+.admin-expense-recent > strong {
+  white-space: nowrap;
+}
+
+.admin-expense-upcoming-main,
+.admin-expense-recent > span {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+  text-align: left;
+}
+
+.admin-expense-upcoming-main small,
+.admin-expense-recent small {
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-upcoming-end {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+}
+
+.admin-expense-alert {
+  color: #a65a13 !important;
+  font-weight: 750;
+}
+
+.admin-expense-upcoming-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 10px;
+  background: #fff1e8;
+  color: #d76c32;
+}
+
+.admin-expense-upcoming-icon.is-schedule {
+  background: #edf2ff;
+  color: #4169c9;
+}
+
+.admin-expense-recent {
+  width: 100%;
+  border-right: 0;
+  border-left: 0;
+  border-top: 1px solid var(--admin-border);
+  border-bottom: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.admin-expense-recent:hover {
+  background: var(--admin-surface-subtle);
+}
+
+.admin-expense-disclaimer,
+.admin-expense-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 11px 13px;
+  border: 1px solid #f1dfb6;
+  border-radius: 9px;
+  background: #fff9e9;
+  color: #80622a;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.admin-expense-filters {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.4fr) repeat(2, minmax(150px, 0.8fr));
+  gap: 9px;
+  margin-bottom: 15px;
+}
+
+.admin-expense-search {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  color: var(--admin-muted);
+}
+
+.admin-expense-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--admin-text);
+  font-size: 11px;
+}
+
+.admin-expense-table {
+  min-width: 980px;
+}
+
+.admin-expense-row-link {
+  display: grid;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--admin-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.admin-expense-row-link span {
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-status {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #eef2f7;
+  color: #566276;
+  font-size: 9px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.admin-expense-status.is-paid {
+  background: #e8f7ee;
+  color: #1b7647;
+}
+
+.admin-expense-status.is-partially-paid,
+.admin-expense-status.is-overdue {
+  background: #fff1e3;
+  color: #ad5c12;
+}
+
+.admin-expense-status.is-cancelled {
+  background: #fcebea;
+  color: #a13a34;
+}
+
+.admin-expense-pending {
+  display: block;
+  margin-top: 5px;
+  color: #a15c16;
+  font-size: 9px;
+}
+
+.admin-expense-pagination {
+  margin-top: 15px;
+  color: var(--admin-muted);
+  font-size: 11px;
+}
+
+.admin-expense-pagination > div,
+.admin-expense-detail-actions,
+.admin-expense-schedule-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.admin-expense-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.admin-expense-schedule-list {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-expense-schedule {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 15px;
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  background: var(--admin-surface-subtle);
+}
+
+.admin-expense-schedule-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.admin-expense-schedule-main > div {
+  display: grid;
+  gap: 5px;
+}
+
+.admin-expense-schedule-main small,
+.admin-expense-schedule-meta span {
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-schedule-meta {
+  display: grid;
+  gap: 6px;
+  color: var(--admin-text);
+  font-size: 11px;
+  text-align: right;
+}
+
+.admin-expense-schedule-meta span.is-active {
+  color: #218258;
+}
+
+.admin-expense-report-filters {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+}
+
+.admin-expense-report-filters > label {
+  display: grid;
+  align-items: start;
+  gap: 6px;
+}
+
+.admin-expense-report-filters > button {
+  min-height: 40px;
+}
+
+.admin-expense-report-summary {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  margin: 20px 0;
+}
+
+.admin-expense-report-summary > div {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+  background: var(--admin-surface-subtle);
+}
+
+.admin-expense-report-summary span {
+  color: var(--admin-muted);
+  font-size: 9px;
+}
+
+.admin-expense-report-summary strong {
+  color: var(--admin-text);
+  font-size: 13px;
+}
+
+.admin-expense-report-toolbar {
+  margin: 15px 0;
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-report-toolbar .admin-primary-button {
+  text-decoration: none;
+}
+
+.admin-expense-overlay {
+  position: fixed;
+  z-index: 1200;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background: rgb(10 17 29 / 68%);
+  backdrop-filter: blur(5px);
+}
+
+.admin-expense-overlay-front {
+  z-index: 1210;
+}
+
+.admin-expense-dialog {
+  display: flex;
+  width: min(860px, 100%);
+  max-height: min(92dvh, 980px);
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--admin-border);
+  border-radius: 17px;
+  background: var(--admin-surface);
+  color: var(--admin-text);
+  box-shadow: 0 24px 90px rgb(0 0 0 / 28%);
+}
+
+.admin-expense-small-dialog {
+  width: min(680px, 100%);
+}
+
+.admin-expense-detail-dialog {
+  width: min(900px, 100%);
+}
+
+.admin-expense-dialog > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-expense-dialog > header h2 {
+  margin: 4px 0 0;
+  color: var(--admin-text);
+  font-size: 20px;
+}
+
+.admin-expense-dialog > header p {
+  margin: 5px 0 0;
+  color: var(--admin-muted);
+  font-size: 11px;
+}
+
+.admin-expense-dialog > form {
+  display: flex;
+  min-height: 0;
+  flex: 1;
+  flex-direction: column;
+}
+
+.admin-expense-form-scroll {
+  overflow: auto;
+  padding: 20px 24px;
+}
+
+.admin-expense-form-scroll .admin-form-grid {
+  gap: 14px;
+}
+
+.admin-expense-dialog .admin-form-grid > label {
+  color: var(--admin-text);
+}
+
+.admin-expense-dialog .admin-form-grid input:not([type="checkbox"]),
+.admin-expense-dialog .admin-form-grid textarea,
+.admin-expense-dialog .admin-form-grid select,
+.admin-expense-dialog .admin-form-grid .admin-expense-input {
+  border: 1px solid var(--admin-border);
+  background: var(--admin-surface-subtle);
+  color: var(--admin-text);
+}
+
+.admin-expense-dialog .admin-form-grid input:focus,
+.admin-expense-dialog .admin-form-grid textarea:focus,
+.admin-expense-dialog .admin-form-grid select:focus {
+  border-color: #7798e8;
+  outline: 2px solid rgb(72 119 222 / 18%);
+}
+
+.admin-expense-dialog .admin-form-grid label small {
+  color: var(--admin-muted);
+}
+
+.admin-expense-dialog .admin-form-actions {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 14px 24px;
+  border-top: 1px solid var(--admin-border);
+  background: var(--admin-surface);
+}
+
+.admin-secondary-button {
+  display: inline-flex;
+  min-height: 39px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  background: var(--admin-surface);
+  color: var(--admin-text);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-secondary-button:hover {
+  background: var(--admin-surface-subtle);
+}
+
+.admin-secondary-button.is-compact {
+  min-height: 34px;
+  padding-inline: 9px;
+  font-size: 10px;
+}
+
+.admin-secondary-button.is-danger {
+  color: #b23e3b;
+}
+
+.admin-expense-section-title {
+  grid-column: 1 / -1;
+  margin: 8px 0 -3px;
+  padding-top: 13px;
+  border-top: 1px solid var(--admin-border);
+  color: var(--admin-text);
+  font-size: 13px;
+}
+
+.admin-expense-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-expense-detail-grid > div {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  background: var(--admin-surface-subtle);
+}
+
+.admin-expense-detail-grid > div.is-full {
+  grid-column: 1 / -1;
+}
+
+.admin-expense-detail-grid small,
+.admin-expense-detail-grid p {
+  margin: 0;
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-detail-grid strong {
+  overflow-wrap: anywhere;
+  color: var(--admin-text);
+  font-size: 12px;
+}
+
+.admin-expense-detail-actions {
+  margin: 16px 0;
+}
+
+.admin-expense-payment-list {
+  display: grid;
+  gap: 7px;
+}
+
+.admin-expense-payment,
+.admin-expense-audit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px;
+  border: 1px solid var(--admin-border);
+  border-radius: 9px;
+  color: var(--admin-text);
+}
+
+.admin-expense-payment > span,
+.admin-expense-audit {
+  display: grid;
+  gap: 5px;
+}
+
+.admin-expense-payment small,
+.admin-expense-audit span,
+.admin-expense-audit small {
+  color: var(--admin-muted);
+  font-size: 10px;
+}
+
+.admin-expense-payment.is-voided {
+  opacity: 0.65;
+}
+
+.admin-expense-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admin-expense-attachments > a,
+.admin-expense-attachments > label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-expense-attachments input[type="file"] {
+  display: none;
+}
+
+.admin-expense-audit {
+  margin-top: 7px;
+}
+
+.admin-expense-small-dialog > p {
+  padding: 0 24px;
+  color: var(--admin-muted);
+  font-size: 12px;
+}
+
+.admin-expense-small-dialog .admin-form-grid {
+  padding-top: 5px;
+}
+
+.admin-expense-loading,
+.admin-expense-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 18px;
+  border: 1px solid var(--admin-border);
+  border-radius: 11px;
+  background: var(--admin-surface);
+  color: var(--admin-muted);
+  font-size: 12px;
+}
+
+.admin-expense-error {
+  border-color: #f0c4c1;
+  color: #a13733;
+}
+
+.is-spinning {
+  animation: admin-expense-spin 1s linear infinite;
+}
+
+@keyframes admin-expense-spin {
+  to { transform: rotate(360deg); }
+}
+
+html[data-admin-theme="dark"] .admin-expense-tabs button.is-active {
+  background: #233653;
+  color: #a9c5ff;
+}
+
+html[data-admin-theme="dark"] .admin-expense-period input,
+html[data-admin-theme="dark"] .admin-expense-input,
+html[data-admin-theme="dark"] .admin-expense-search,
+html[data-admin-theme="dark"] .admin-secondary-button,
+html[data-admin-theme="dark"] .admin-expense-dialog .admin-icon-button {
+  border-color: var(--admin-border);
+  background: var(--admin-surface-subtle);
+  color: var(--admin-text);
+}
+
+html[data-admin-theme="dark"] .admin-expense-dialog .admin-form-grid input:not([type="checkbox"]),
+html[data-admin-theme="dark"] .admin-expense-dialog .admin-form-grid textarea,
+html[data-admin-theme="dark"] .admin-expense-dialog .admin-form-grid select {
+  border-color: #39465a;
+  background: #202a3a;
+  color: #edf2f8;
+}
+
+html[data-admin-theme="dark"] .admin-expense-dialog .admin-form-grid input::placeholder,
+html[data-admin-theme="dark"] .admin-expense-dialog .admin-form-grid textarea::placeholder {
+  color: #9aa8bb;
+}
+
+html[data-admin-theme="dark"] .admin-expense-recent:hover {
+  background: var(--admin-surface-subtle);
+}
+
+html[data-admin-theme="dark"] .admin-expense-disclaimer,
+html[data-admin-theme="dark"] .admin-expense-warning {
+  border-color: #6d5935;
+  background: #332b1d;
+  color: #e8cd8f;
+}
+
+@media (max-width: 900px) {
+  .admin-expense-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-expense-report-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .admin-expense-schedule {
+    grid-template-columns: 1fr auto;
+  }
+
+  .admin-expense-schedule-meta {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 44px;
+    text-align: left;
+  }
+
+  .admin-expense-schedule-actions {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .admin-expense-report-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .admin-expense-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .admin-expense-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .admin-expense-filters,
+  .admin-expense-report-filters,
+  .admin-expense-report-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-expense-period {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-expense-overlay {
+    align-items: end;
+    padding: 0;
+  }
+
+  .admin-expense-dialog,
+  .admin-expense-small-dialog {
+    width: 100%;
+    max-height: 94dvh;
+    border-radius: 17px 17px 0 0;
+  }
+
+  .admin-expense-dialog > header,
+  .admin-expense-form-scroll {
+    padding-inline: 17px;
+  }
+
+  .admin-expense-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-expense-detail-grid > div.is-full {
+    grid-column: auto;
+  }
+
+  .admin-expense-dialog .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-expense-dialog .admin-form-full,
+  .admin-expense-section-title {
+    grid-column: auto;
+  }
+
+  .admin-expense-dialog .admin-form-actions {
+    flex-direction: column-reverse;
+    padding: 12px 17px max(12px, env(safe-area-inset-bottom));
+  }
+
+  .admin-expense-dialog .admin-form-actions > button {
+    width: 100%;
+  }
+
+  .admin-expense-schedule {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-expense-schedule-meta,
+  .admin-expense-schedule-actions {
+    grid-column: 1;
+    grid-row: auto;
+    padding-left: 44px;
+    align-items: flex-start;
+  }
+
+  .admin-expense-small-dialog > p {
+    padding-inline: 17px;
+  }
+}
