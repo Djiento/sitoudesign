@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import Script from "next/script";
+import PWARegister from "@/components/pwa/PWARegister";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,10 +18,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: Readonly<{ children: React.ReactNode }>){
   return (
     <html lang="fr" data-scroll-behavior="smooth" data-theme="sitou" suppressHydrationWarning>
       <body>
+        <PWARegister />
         <Script id="sitou-admin-theme-init" strategy="beforeInteractive">
           {`(() => {
             try {
